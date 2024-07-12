@@ -30,7 +30,8 @@ export class UserComponent {
    }
   // imagePath=computed(()=>'assets/users/'+this.selectedUser().avatar)
    onSelectUser(){
-    this.data.emit(this.name)
+    this.data.emit(this.name) //emit the name of the selected user
+    
     // const randomIndex=Math.floor(Math.random()*DUMMY_USERS.length)
     // this.selectedUser.set(DUMMY_USERS[randomIndex])
    }

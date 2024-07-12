@@ -1,13 +1,16 @@
 <app-header></app-header>
 <main>
-    <ul id="users">
-        <!-- <li><app-user [id]="users[0].id" [avatar]="users[0].avatar" [name]="users[0].name" (data)="onSelectedUserId($event)"/></li>
-        <li><app-user [id]="users[0].id" [avatar]="users[1].avatar"[name]="users[1].name" (data)="onSelectedUserId($event)"/></li>
-        <li><app-user [id]="users[0].id" [avatar]="users[2].avatar" [name]="users[2].name" (data)="onSelectedUserId($event)"/></li>
-        <li><app-user [id]="users[0].id" [avatar]="users[3].avatar"[name]="users[3].name" (data)="onSelectedUserId($event)"/></li> -->
-        <li *ngFor="let user of users">
-          <app-user [id]="user.id" [avatar]="user.avatar" [name]="user.name" (data)="onSelectedUserId($event)"></app-user>
-      </li>
-    </ul>
-    <h2>{{name}}</h2>
+  <div class="calculator-container">
+    <app-investment-calculator (investmentDetails)="onInvestmentDetails($event)"/>
+  </div>
+  <br>
+  <div >
+  @if (calculatedResults.length){
+    <app-results  [displayData]="calculatedResults" />
+  } @else {
+   <div> <p>Add values to check investment results!</p></div>
+  }
+
+  </div>
 </main>
+
