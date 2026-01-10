@@ -1,0 +1,94 @@
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  transition: background-color 0.2s;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+.btn-add {
+  background-color: #2196f3;
+}
+
+.btn-add:hover {
+  background-color: #1e88e5;
+}
+
+.loading {
+  font-style: italic;
+  margin-bottom: 10px;
+  color: #ff9800;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.users-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.user-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  transition: background-color 0.2s;
+}
+
+.user-item:hover {
+  background-color: #f9f9f9;
+}
+
+.btn-delete {
+  background-color: #f44336;
+}
+
+.btn-delete:hover {
+  background-color: #e53935;
+}
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-form input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.btn-submit {
+  align-self: flex-start;
+  background-color: #4caf50;
+}
+
+.btn-submit:hover {
+  background-color: #45a049;
+}

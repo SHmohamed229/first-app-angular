@@ -1,0 +1,39 @@
+<div class="container">
+  <h3>إضافة مستخدم جديد</h3>
+  <form [formGroup]="userForm" (ngSubmit)="onAddUser()" class="add-form">
+    <input formControlName="name" placeholder="Name" />
+    <input formControlName="username" placeholder="Username" />
+    <input formControlName="email" placeholder="Email" type="email" />
+    <div class="actions">
+      <button type="submit" class="btn btn-submit">
+        {{ isEditMode ? "💾 Update User" : "➕ Add User" }}
+      </button>
+
+      <button
+        *ngIf="isEditMode"
+        type="button"
+        class="btn btn-cancel"
+        (click)="resetForm()"
+      >
+        ❌ Cancel
+      </button>
+      <button class="btn" (click)="reloadUsers()">🔄 Reload Users</button>
+    </div>
+  </form>
+
+  <div *ngIf="loading$ | async" class="loading">⏳ Loading users...</div>
+  <div *ngIf="error$ | async as error" class="error">❌ {{ error }}</div>
+
+  <h3>قائمة المستخدمين</h3>
+  <ul *ngIf="!(loading$ | async)" class="users-list">
+    <li *ngFor="let user of users$ | async" class="user-item">
+      <div class="user-info">
+        <strong>{{ user.name }}</strong> – {{ user.email }}
+      </div>
+      <button class="btn btn-delete" (click)="deleteUser(user.id)">
+        ❌ Delete
+      </button>
+      <button class="btn btn-delete" (click)="editUser(user)">✏️ Edit</button>
+    </li>
+  </ul>
+</div>

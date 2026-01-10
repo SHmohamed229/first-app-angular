@@ -1,7 +1,7 @@
 <app-header></app-header>
 <main>
   <div class="calculator-container">
-    <app-investment-calculator (investmentDetails)="onInvestmentDetails($event)"/>
+    <!-- <app-investment-calculator (investmentDetails)="onInvestmentDetails($event)"/>
   </div>
   <br>
   <div >
@@ -9,8 +9,8 @@
     <app-results  [displayData]="calculatedResults" />
   } @else {
    <div> <p>Add values to check investment results!</p></div>
-  }
+  } -->
 
+    <router-outlet></router-outlet>
   </div>
 </main>
-
