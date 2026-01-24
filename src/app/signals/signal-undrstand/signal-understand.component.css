@@ -1,0 +1,21 @@
+.valid {
+  border: 2px solid green;
+  background-color: #e6ffe6;
+}
+
+.invalid {
+  border: 2px solid red;
+  background-color: #ffe6e6;
+}
+
+.btn-valid {
+  background-color: green;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-invalid {
+  background-color: grey;
+  color: white;
+  cursor: not-allowed;
+}

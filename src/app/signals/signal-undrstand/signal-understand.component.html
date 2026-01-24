@@ -1,0 +1,92 @@
+<!-- <p>الاسم الحالي: {{ nameSignal() }}</p>
+<p>الاسم كابيتال: {{ upperName() }}</p>
+<button (click)="printName()">اطبع الاسم</button>
+
+<button (click)="changeName()">غيّر الاسم</button>
+
+<p>العمر:{{ ageSignal() }}</p>
+<p>الحالة:{{ isAdult() }}</p>
+
+<button (click)="increaseAge()">زود سنه</button>
+
+<hr />
+<h3>Effect</h3>
+<p>العمر الحالي:{{ currentAge() }}</p>
+<p>الحالة:{{ isAdultComputed() }}</p>
+
+<button (click)="increaseCurrentAge()">زود سنه</button>
+
+<hr />
+
+<h2>Real-Time Ticket Simulator</h2> -->
+
+<div class="ticket-simulator">
+  <h2>🎫 Real-Time Ticket Simulator</h2>
+
+  <!-- =========================
+       اختيار المحطات
+       ========================= -->
+  <div class="form-group">
+    <label>From:</label>
+    <select [(ngModel)]="fromStationValue">
+      <option value="">اختر المحطة</option>
+      <option *ngFor="let station of stations()" [value]="station">
+        {{ station }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>To:</label>
+    <select [(ngModel)]="toStationValue">
+      <option value="">اختر المحطة</option>
+      <option *ngFor="let station of stations()" [value]="station">
+        {{ station }}
+      </option>
+    </select>
+  </div>
+
+  <!-- =========================
+       عدد التذاكر
+       ========================= -->
+  <div class="form-group">
+    <label>Ticket Count:</label>
+    <input type="number" [(ngModel)]="ticketCount" min="1" />
+  </div>
+
+  <!-- =========================
+       درجة القطار
+       ========================= -->
+  <div class="form-group">
+    <label>Class:</label>
+    <select [(ngModel)]="classType">
+      <option value="economy">Economy</option>
+      <option value="business">Business</option>
+      <option value="first">First Class</option>
+    </select>
+  </div>
+
+  <!-- =========================
+       عرض المعلومات
+       ========================= -->
+  <div class="summary">
+    <p>From: {{ fromStation() }}</p>
+    <p>To: {{ toStation() }}</p>
+    <p>Ticket Count: {{ ticketCount() }}</p>
+    <p>Class Type: {{ classType() }}</p>
+    <p>Valid Route: {{ isValidRoute() ? "✅ Yes" : "❌ No" }}</p>
+    <p>Base Price: {{ basePrice() }}</p>
+    <p>Total Price: {{ totalPrice() }}</p>
+  </div>
+
+  <!-- =========================
+       زر الحجز
+       ========================= -->
+  <button
+    (click)="bookTickets()"
+    [disabled]="!isValidRoute()"
+    [ngClass]="isValidRoute() ? 'btn-valid' : 'btn-invalid'"
+  >
+    احجز التذاكر
+  </button>
+</div>
